@@ -110,6 +110,7 @@ Two notebooks are included in this repository in addition to `reconstructions.ip
 - `eval_seg.ipynb` allows you to evaluate fine-tuned segmentation models and perform Wilcoxon tests.
 <br>
 - `clustering.ipynb` groups TCGA patients by predicted scores across the 4 MRI modalities and plots Kaplan-Meier curves to assess the stratification power of the models.
+  
 # ⭐ Contribute & Support
 
 💡 Found a bug? Want to add features? Feel free to submit a pull request! <br>
