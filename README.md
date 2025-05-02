@@ -108,7 +108,6 @@ $ python finetune_cls.py --task project_id --modalities t1 t1ce t2 flair
 Two notebooks are included in this repository in addition to `reconstructions.ipynb`.
 <br>
 - `eval_seg.ipynb` allows you to evaluate fine-tuned segmentation models and perform Wilcoxon tests.
-<br>
 - `clustering.ipynb` groups TCGA patients by predicted scores across the 4 MRI modalities and plots Kaplan-Meier curves to assess the stratification power of the models.
   
 # ⭐ Contribute & Support
