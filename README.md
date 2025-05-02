@@ -83,7 +83,7 @@ Although weights are supplied, it is still possible to train the model from scra
 $ python pretrain_bmmae.py --data_dir PATH/TO/DATASET
 ```
 
-# 🎯 Fine-tinung
+# 🎯 Fine-tuning
 Fine-tuning BM-MAE for segmentation, subtyping or survival analysis is straightforward. Follow the steps below based on your task: <br> <br>
 To adapt a UNETR model using the pre-trained ViT for segmentation on the T1c and FLAIR modalities for instance
 ```
