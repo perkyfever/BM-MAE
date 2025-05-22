@@ -46,6 +46,19 @@ class BMMAE(nn.Module):
                 for i in range(num_layers)
             ]
         )
+        
+    @classmethod
+    def from_pretrained(model_filename: str = 'bmmae.pth') -> BMMAE:
+        from huggingface_hub import hf_hub_download
+        # Download weights from Hub
+        filepath = hf_hub_download(
+           repo_id="luklebigbosse/BM-MAE",
+           filename=model_filename,
+        )
+   
+        # Equip model with weights
+        state_dict = torch.load(state_dict, map_location="cpu")
+        model.load_state_dict(state_dict, strict=False)
 
     def generate_random_masks(
         self,
@@ -263,6 +276,19 @@ class ViTEncoder(nn.Module):
             self.cls_token = nn.Parameter(torch.zeros(1, 1, hidden_size))
             trunc_normal_(self.cls_token, std=0.02)
 
+    @classmethod
+    def from_pretrained(model_filename: str = 'bmmae.pth') -> ViTEncoder:
+        from huggingface_hub import hf_hub_download
+        # Download weights from Hub
+        filepath = hf_hub_download(
+           repo_id="luklebigbosse/BM-MAE",
+           filename=model_filename,
+        )
+       
+        # Equip model with weights
+        state_dict = torch.load(state_dict, map_location="cpu")
+        model.load_state_dict(state_dict, strict=False)
+        
     def forward(self, x: Union[Dict[str, torch.Tensor], torch.Tensor]):
         # if x is not a dict convert it to a dict
         if not isinstance(x, dict):
