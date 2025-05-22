@@ -28,6 +28,7 @@ and you're good to go!
 
 # 📥 Download pre-trained weights
 The weights of all models are available for download from [Google Drive](https://drive.google.com/drive/folders/10Z0W_9VrPvY-hhVXTeyoskSx4O47NR5q?usp=sharing). 
+You can also simply download them from the [HuggingFace Hub](https://huggingface.co/luklebigbosse/BM-MAE)
 Once downloaded, place all models in `pretrained_models`.
 There are two available models:
 
@@ -36,6 +37,12 @@ There are two available models:
 <br>
 <br>
 
+You can also load them directly from HuggingFace with the following code
+```python
+from bmmae.model import BMMAE, ViTEncoder
+model = BMMAE.from_pretrained()
+encoder_only = ViTEncoder.from_pretrained()
+```
 # 📂 The Data
 To train the model or replicate the fine-tuning results presented in the paper, you will need to download the [BraTS2021](https://arxiv.org/abs/2107.02314).
 <br>
