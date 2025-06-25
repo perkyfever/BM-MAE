@@ -109,12 +109,12 @@ def loop_pretrain(
                     metrics[f"val/{modality}_loss"].append(total_modality_loss[modality])
                 metrics["val/loss"].append(val_loss)
 
-                if metrics["val/loss"][-1] < best_loss:
-                    best_loss = metrics["val/loss"][-1]
-                    torch.save(
-                        model.state_dict(),
-                        f"pretrained_models/bmmae.pth",
-                    )
+                
+                best_loss = metrics["val/loss"][-1]
+                torch.save(
+                    model.state_dict(),
+                    f"pretrained_models/bmmae.pth",
+                )
 
         if wandb_logging:
             print("Logging to wandb")
